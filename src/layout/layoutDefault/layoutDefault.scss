@@ -1,0 +1,63 @@
+.layout--default {
+  height: 100vh;
+
+  &__logo {
+    display: flex;
+  }
+
+  &__logo .icon {
+    font-size: 40px;
+    margin-right: 10px;
+  }
+
+  &__logo .title {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 900;
+    background-color: #D6D6D6;
+    padding: 15px 20px;
+    border-radius: 50%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px #ddd;
+    padding: 10px 40px;
+    align-items: center;
+  }
+
+  &__account a:first-child {
+    margin-right: 20px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 150%;
+      background-color: #D6D6D6;
+      right: -9px;
+      top: -3px;
+    }
+  }
+
+  &__menu a {
+    color: #D6D6D6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  &__main {
+    height: 75%;
+    padding: 20px 50px;
+  }
+
+  &__footer {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
