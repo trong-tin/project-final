@@ -18,15 +18,15 @@ function JobItem(props) {
           ))}
         </div>
         <div className="mb-10">
-          <span>Thành Phố tuyển dụng:
-          {data.city &&
-            data.city.map((item, index) => (
-              <Tag color="orange" className="mb-5" key={index}>
-                {item}
-              </Tag>
-            ))}
+          <span>
+            Thành Phố tuyển dụng:
+            {data.city &&
+              data.city.map((item, index) => (
+                <Tag color="orange" className="mb-5" key={index}>
+                  {item}
+                </Tag>
+              ))}
           </span>
-          
         </div>
         <div className="mb-10">
           Mức lương:<strong>{data.salary}$</strong>

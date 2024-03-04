@@ -6,15 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { setCookie } from "../../Helpers/cookie";
 
 function Login() {
-  const [mess, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = async (inforUser) => {
     const email = inforUser.email;
     const password = inforUser.password;
     const response = await login(email, password);
-    if (response.length > 0) {
-      mess.success("Bạn đã đăng nhập thành công");
+
+    if (response && response.length > 0) {
+      message.success("Bạn đã đăng nhập thành công");
       const time = 1;
       setCookie("id", response[0].id, time);
       setCookie("email", response[0].email, time);
@@ -22,10 +22,12 @@ function Login() {
       dispatch(checkLogin(true));
       navigate("/");
     }
+    else{
+      message.error("Tài khoản hoặc mật khẩu không đúng, vui lòng thử lại")
+    }
   };
   return (
     <>
-      {contextHolder}
       <Form
         name="basic"
         labelCol={{ span: 8 }}
